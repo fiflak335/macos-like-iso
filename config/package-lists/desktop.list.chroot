@@ -14,7 +14,6 @@ gvfs-fuse
 # Kernel & firmware
 linux-image-amd64
 linux-headers-amd64
-linux-firmware
 intel-microcode
 amd64-microcode
 
@@ -79,12 +78,8 @@ picom
 # Theming
 gtk2-engines-murrine
 gtk2-engines-pixbuf
-gtk3-engines-breeze
 qt5-style-kvantum
-qt5-style-kvantum-themes
-qt6-style-kvantum
 kvantum
-kvantum-theme-materia
 
 # Fonts
 fonts-noto
@@ -135,7 +130,6 @@ nano
 htop
 btop
 neofetch
-fastfetch
 tree
 unzip
 zip
@@ -169,7 +163,12 @@ geany
 # Terminal improvements
 zsh
 fish
-starship
+
+# Display manager + apps referenced by dock launchers
+lightdm
+lightdm-gtk-greeter
+firefox-esr
+gnome-software
 
 # Development tools (optional, adds ~500MB)
 # build-essential
@@ -219,4 +218,3 @@ command-not-found
 bash-completion
 sudo
 lsb-release
-os-release

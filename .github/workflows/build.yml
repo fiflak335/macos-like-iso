@@ -11,17 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install build deps
+      - name: Build ISO in Debian container
         run: |
-          sudo apt-get update
-          sudo apt-get install -y live-build debootstrap squashfs-tools xorriso \
-            isolinux syslinux-efi grub-pc-bin grub-efi-amd64-bin mtools dosfstools
-
-      - name: Build ISO
-        run: |
-          cd $GITHUB_WORKSPACE
-          chmod +x auto/build config/hooks/*.sh || true
-          sudo ./auto/build
+          docker run --privileged --rm \
+            -v ${{ github.workspace }}:/build \
+            -w /build \
+            debian:bookworm \
+            bash -c "apt-get update && apt-get install -y live-build debootstrap squashfs-tools xorriso isolinux syslinux-common syslinux-efi grub-pc-bin grub-efi-amd64-bin mtools dosfstools ca-certificates curl git && chmod +x auto/build config/hooks/*.hook.chroot && ./auto/build"
         timeout-minutes: 120
 
       - name: Upload ISO

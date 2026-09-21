@@ -6,16 +6,10 @@ BUILD_DIR="$(pwd)"
 
 lb config noauto \
     --distribution bookworm \
-    --debian-installer-distribution bookworm \
     --archive-areas "main contrib non-free non-free-firmware" \
-    --debootstrap-options "--variant=minbase --include=systemd,systemd-sysv" \
     --linux-flavours amd64 \
-    --linux-packages "linux-image-amd64 linux-headers-amd64" \
-    --bootloader "grub-pc,grub-efi-amd64" \
-    --bootappend-live "boot=live components quiet splash username=macuser user-fullname='Mac User' hostname=maclike locales=en_US.UTF-8 keyboard-layouts=us timezone=UTC" \
-    --iso-application "macOS-like Live" \
-    --iso-publisher "Custom Build" \
-    --iso-volume "macOS-like $(date +%Y%m%d)" \
+    --bootloaders "syslinux grub-efi" \
+    --binary-images iso-hybrid \
     --memtest none \
     --firmware-binary true \
     --firmware-chroot true \
@@ -23,17 +17,10 @@ lb config noauto \
     --updates true \
     --backports true \
     --source false \
-    --apt-indices true \
-    --apt-recommends true \
-    --apt-secure true \
-    --cache true \
-    --cache-indices true \
-    --cache-packages true \
-    --chroot-filesystem squashfs \
-    --compression xz \
-    --iso-preparer "macos-like-iso builder" \
-    --binary-images iso-hybrid \
-    --bootappend-live-failsafe "boot=live components username=macuser user-fullname='Mac User' hostname=maclike locales=en_US.UTF-8 keyboard-layouts=us timezone=UTC memtest=86"
+    --iso-application "macOS-like Live" \
+    --iso-publisher "Custom Build" \
+    --iso-volume "macOS-like $(date +%Y%m%d)" \
+    --bootappend-live "boot=live components quiet splash username=macuser user-fullname='Mac User' hostname=maclike locales=en_US.UTF-8 keyboard-layouts=us timezone=UTC"
 
 lb build
 
