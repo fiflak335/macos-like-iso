@@ -17,7 +17,7 @@ jobs:
             -v ${{ github.workspace }}:/build \
             -w /build \
             debian:bookworm \
-            bash -c "apt-get update && apt-get install -y live-build debootstrap squashfs-tools xorriso isolinux syslinux-common syslinux-efi grub-pc-bin grub-efi-amd64-bin mtools dosfstools ca-certificates curl git && chmod +x auto/build config/hooks/*.hook.chroot && ./auto/build"
+            bash -c "apt-get update && apt-get install -y live-build debootstrap squashfs-tools xorriso isolinux syslinux-common syslinux-efi grub-pc-bin grub-efi-amd64-bin mtools dosfstools ca-certificates curl git && chmod +x auto/config auto/build config/hooks/*.hook.chroot && ./auto/config && ./auto/build"
         timeout-minutes: 120
 
       - name: Upload ISO
