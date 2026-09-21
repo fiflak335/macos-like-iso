@@ -1,0 +1,103 @@
+# Starship configuration - macOS-like prompt
+
+format = """
+$character"""
+
+[character]
+success_symbol = "[▸](bold green) "
+error_symbol = "[▸](bold red) "
+vicmd_symbol = "[▸](bold yellow) "
+
+[directory]
+style = "bold blue"
+format = "[$path]($style) "
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold yellow"
+format = '[($conflicted$deleted$renamed$modified$staged$untracked$stashed)]($style) '
+conflicted = "="
+deleted = "✘"
+renamed = "»"
+modified = "!"
+staged = "+"
+untracked = "?"
+stashed = "$"
+
+[cmd_duration]
+min_time = 500
+format = "took [$duration]($style) "
+style = "bold dimmed white"
+
+[time]
+disabled = false
+format = '[$time]($style) '
+time_format = "%H:%M:%S"
+style = "bold dimmed white"
+
+[username]
+style_user = "bold green"
+style_root = "bold red"
+format = "[$user]($style) "
+show_always = false
+
+[hostname]
+ssh_only = true
+style = "bold cyan"
+format = "@[$hostname]($style) "
+
+[package]
+symbol = "📦 "
+style = "bold blue"
+format = "[$symbol$version]($style) "
+
+[nodejs]
+symbol = "⬢ "
+style = "bold green"
+format = "[$symbol$version]($style) "
+
+[python]
+symbol = "🐍 "
+style = "bold yellow"
+format = "[$symbol$version]($style) "
+
+[rust]
+symbol = "🦀 "
+style = "bold red"
+format = "[$symbol$version]($style) "
+
+[golang]
+symbol = "🐹 "
+style = "bold cyan"
+format = "[$symbol$version]($style) "
+
+[docker_context]
+symbol = "🐳 "
+style = "bold blue"
+format = "[$symbol$context]($style) "
+
+[kubernetes]
+symbol = "☸ "
+style = "bold cyan"
+format = "[$symbol$context]($style) "
+
+[aws]
+symbol = "☁ "
+style = "bold yellow"
+format = "[$symbol$profile]($style) "
+
+[conda]
+symbol = "🅒 "
+style = "bold blue"
+format = "[$symbol$environment]($style) "
+
+[virtualenv]
+symbol = "🅥 "
+style = "bold blue"
+format = "[$symbol$environment]($style) "

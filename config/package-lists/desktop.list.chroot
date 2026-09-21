@@ -1,0 +1,222 @@
+# Base system
+live-boot
+live-config
+live-config-systemd
+systemd
+systemd-sysv
+dbus
+policykit-1
+udisks2
+gvfs
+gvfs-backends
+gvfs-fuse
+
+# Kernel & firmware
+linux-image-amd64
+linux-headers-amd64
+linux-firmware
+intel-microcode
+amd64-microcode
+
+# Bootloader
+grub-pc
+grub-efi-amd64
+grub2-common
+shim-signed
+mokutil
+
+# X11 / Wayland
+xserver-xorg
+xserver-xorg-video-all
+xserver-xorg-input-all
+x11-xserver-utils
+xinit
+xterm
+
+# Wayland compositor (for better theming support)
+wayland
+weston
+seatd
+
+# Desktop Environment - XFCE (lightweight, highly themeable)
+xfce4
+xfce4-goodies
+xfce4-terminal
+xfce4-whiskermenu-plugin
+xfce4-docklike-plugin
+xfce4-pulseaudio-plugin
+xfce4-battery-plugin
+xfce4-screenshooter
+xfce4-notifyd
+thunar
+thunar-volman
+thunar-archive-plugin
+thunar-media-tags-plugin
+mousepad
+ristretto
+catfish
+
+# Alternative: MATE (more traditional, also themeable)
+# mate-desktop-environment
+# mate-desktop-environment-extras
+# caja
+# pluma
+# engrampa
+# eom
+
+# Dock - Plank (macOS-style)
+plank
+
+# Launcher - Rofi (Spotlight-like)
+rofi
+
+# Notification daemon
+dunst
+
+# Compositor for effects
+picom
+
+# Theming
+gtk2-engines-murrine
+gtk2-engines-pixbuf
+gtk3-engines-breeze
+qt5-style-kvantum
+qt5-style-kvantum-themes
+qt6-style-kvantum
+kvantum
+kvantum-theme-materia
+
+# Fonts
+fonts-noto
+fonts-noto-color-emoji
+fonts-noto-mono
+fonts-liberation2
+fonts-dejavu-core
+fonts-ubuntu
+fontconfig
+
+# Icon themes
+breeze-icon-theme
+papirus-icon-theme
+
+# GTK themes
+gtk3-nocsd
+adwaita-icon-theme
+gnome-themes-extra
+
+# Audio
+pipewire
+pipewire-pulse
+wireplumber
+alsa-utils
+pavucontrol
+
+# Network
+network-manager
+network-manager-gnome
+firewall-config
+ufw
+
+# Bluetooth
+bluez
+blueman
+
+# Printing
+cups
+cups-client
+system-config-printer
+
+# Utilities
+curl
+wget
+git
+vim
+nano
+htop
+btop
+neofetch
+fastfetch
+tree
+unzip
+zip
+p7zip-full
+xz-utils
+bzip2
+gnupg2
+software-properties-common
+apt-transport-https
+ca-certificates
+
+# File manager enhancements
+thunar-vcs-plugin
+ffmpegthumbnailer
+tumbler
+poppler-utils
+
+# Screenshot/recording
+flameshot
+peek
+
+# Archive manager
+file-roller
+
+# Calculator
+galculator
+
+# Text editor
+geany
+
+# Terminal improvements
+zsh
+fish
+starship
+
+# Development tools (optional, adds ~500MB)
+# build-essential
+# gcc
+# g++
+# make
+# cmake
+# python3
+# python3-pip
+# python3-venv
+# nodejs
+# npm
+# golang
+# rustc
+# cargo
+
+# VirtualBox guest additions (for better VM integration)
+virtualbox-guest-utils
+virtualbox-guest-x11
+virtualbox-guest-dkms
+
+# Firmware for hardware support
+firmware-linux
+firmware-linux-free
+firmware-linux-nonfree
+firmware-intel-sound
+firmware-realtek
+firmware-atheros
+firmware-brcm80211
+firmware-iwlwifi
+firmware-misc-nonfree
+
+# Localization
+locales
+keyboard-configuration
+console-setup
+tzdata
+
+# ACPI/Power management
+acpi
+acpid
+powermgmt-base
+laptop-detect
+
+# Misc
+command-not-found
+bash-completion
+sudo
+lsb-release
+os-release

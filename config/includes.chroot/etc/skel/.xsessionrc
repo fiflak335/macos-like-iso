@@ -1,0 +1,33 @@
+#!/bin/sh
+# ~/.xsessionrc: executed by Xsession on login
+
+# Set GTK theme
+export GTK_THEME=WhiteSur-Dark
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+# Qt theme
+export QT_STYLE_OVERRIDE=kvantum
+export QT_QPA_PLATFORMTHEME=kvantum
+
+# Cursor theme
+export XCURSOR_THEME=WhiteSur-cursors
+export XCURSOR_SIZE=24
+
+# DPI
+export GDK_DPI_SCALE=1
+export GDK_SCALE=1
+
+# Start compositor
+picom --config "$HOME/.config/picom/picom.conf" -b &
+
+# Start dock
+plank &
+
+# Set keyboard repeat rate
+xset r rate 250 30 2>/dev/null || true
+
+# Disable bell
+xset -b 2>/dev/null || true
+
+# Load Xresources if exists
+[ -f "$HOME/.Xresources" ] && xrdb -merge "$HOME/.Xresources" 2>/dev/null || true
